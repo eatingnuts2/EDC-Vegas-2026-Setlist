@@ -233,6 +233,17 @@ button.active{background:white;color:#111}
   margin-top:5px;
   opacity:.9;
 }
+
+.genre{
+  font-size:10.4px;
+  font-weight:900;
+  letter-spacing:.025em;
+  text-transform:uppercase;
+  line-height:1.05;
+  margin-top:4px;
+  opacity:.78;
+  overflow-wrap:anywhere;
+}
 .footer{position:absolute; left:50%; bottom:18px; transform:translateX(-50%); white-space:nowrap; font-size:18px; font-weight:700; opacity:.9; pointer-events:none; text-align:center; user-select:none; -webkit-user-select:none;}
 .note{
   max-width:1120px;
@@ -423,6 +434,14 @@ button.active{background:white;color:#111}
     font-size:9.6px !important;
     margin-top:3px;
     font-weight:600;
+  }
+
+  .genre{
+    font-size:8.6px !important;
+    line-height:1.03;
+    margin-top:3px;
+    font-weight:900;
+    letter-spacing:.015em;
   }
 
   .footer{
@@ -1034,6 +1053,7 @@ body.plan-mode .set:not(.selected){
 }
 
 body.plan-mode .set:not(.selected) .artist,
+body.plan-mode .set:not(.selected) .genre,
 body.plan-mode .set:not(.selected) .time{
   opacity:.58;
 }
@@ -1668,7 +1688,7 @@ if(IS_STANDALONE){
   document.body.classList.add("standalone");
 }
 
-const DATA = {"Day 1":{"Pacific Stage":[["MADS","2:00 PM","3:00 PM"],["Layla Benitez","3:00 PM","4:00 PM"],["Kamino","4:00 PM","5:00 PM"],["TSHA","5:00 PM","6:00 PM"],["Marlon Hoffstadt","6:00 PM","7:00 PM"],["Mau P","7:00 PM","8:00 PM"],["GRiZ","8:05 PM","9:20 PM"],["Fisher","9:30 PM","11:00 PM"]],"Northwest Tent":[["Jaemo","2:00 PM","2:45 PM"],["Gissala","2:45 PM","3:45 PM"],["Kaleena Zanders","3:45 PM","4:45 PM"],["Star Junk 95","4:45 PM","5:45 PM"],["Devault","5:45 PM","6:45 PM"],["X Club.","6:45 PM","7:45 PM"],["TroyBoi","7:50 PM","8:50 PM"],["Notion","8:55 PM","9:55 PM"],["Crankdat","10:00 PM","11:00 PM"]],"Forest Stage":[["BB Rose","2:00 PM","3:00 PM"],["Chatterbox","3:00 PM","3:45 PM"],["Clesco","3:45 PM","4:45 PM"],["Borne","4:45 PM","5:45 PM"],["Champion","5:45 PM","6:45 PM"],["Omnom","6:45 PM","7:45 PM"],["MPH","7:45 PM","8:45 PM"],["Nia Archives DJ Set","8:45 PM","9:45 PM"]],"Propagate Stage":[["Stargirl","4:00 PM","4:45 PM"],["Buccaltheft","4:45 PM","5:45 PM"],["Baalti","5:45 PM","6:45 PM"],["Young Franco","6:45 PM","8:00 PM"],["UNIIQU3","8:00 PM","9:30 PM"],["LSDXOXO","9:30 PM","10:30 PM"]]},"Day 2":{"Pacific Stage":[["Nai","2:00 PM","3:15 PM"],["Raecola","3:15 PM","4:15 PM"],["Linska","4:15 PM","5:15 PM"],["Oppidan","5:15 PM","6:15 PM"],["Tape B","6:15 PM","7:15 PM"],["ISOxo","7:20 PM","8:20 PM"],["Knock2","8:25 PM","9:25 PM"],["Dom Dolla","9:30 PM","11:00 PM"]],"Northwest Tent":[["Kempeh","2:00 PM","2:45 PM"],["Jade","2:45 PM","3:45 PM"],["Whipped Cream","3:45 PM","4:45 PM"],["Roddy Lima","4:45 PM","5:45 PM"],["Jigitz","5:45 PM","6:45 PM"],["VTSS","6:45 PM","7:45 PM"],["Odd Mob","7:50 PM","8:50 PM"],["BUNT.","8:55 PM","9:55 PM"],["Levity B2B Wooli","10:00 PM","11:00 PM"]],"Forest Stage":[["Orchiid","2:00 PM","3:00 PM"],["Adame Twins","3:00 PM","4:00 PM"],["Shming","4:00 PM","5:00 PM"],["Effin","5:00 PM","6:00 PM"],["Dennett","6:00 PM","7:00 PM"],["Alleycvt","7:00 PM","8:00 PM"],["Inzo","8:00 PM","9:00 PM"],["Hedex","9:00 PM","10:00 PM"]],"Propagate Stage":[["AlyssaJB","4:00 PM","4:45 PM"],["Fagofcolour","4:45 PM","5:45 PM"],["Zorza","5:45 PM","6:45 PM"],["MGNA CRRRTA DJ Set","6:45 PM","8:00 PM"],["MCR-T","8:00 PM","9:30 PM"],["Bambii","9:30 PM","10:30 PM"]]}};
+const DATA = {"Day 1":{"Pacific Stage":[["MADS","2:00 PM","3:00 PM","House / Club"],["Layla Benitez","3:00 PM","4:00 PM","Melodic Techno / House"],["Kamino","4:00 PM","5:00 PM","Tech House / Club House"],["TSHA","5:00 PM","6:00 PM","House / Melodic Electronic"],["Marlon Hoffstadt","6:00 PM","7:00 PM","Trance / Eurodance"],["Mau P","7:00 PM","8:00 PM","Tech House / Techno"],["GRiZ","8:05 PM","9:20 PM","Future Funk / Bass"],["Fisher","9:30 PM","11:00 PM","Tech House"]],"Northwest Tent":[["Jaemo","2:00 PM","2:45 PM","Melodic House"],["Gissala","2:45 PM","3:45 PM","Melodic House / Club"],["Kaleena Zanders","3:45 PM","4:45 PM","Vocal House / Dance"],["Star Junk 95","4:45 PM","5:45 PM","Indie Dance / House"],["Devault","5:45 PM","6:45 PM","Electronic / Dark House"],["X Club.","6:45 PM","7:45 PM","Techno / Breakbeat"],["TroyBoi","7:50 PM","8:50 PM","Trap / Bass"],["Notion","8:55 PM","9:55 PM","Bassline / UKG"],["Crankdat","10:00 PM","11:00 PM","Dubstep / Bass"]],"Forest Stage":[["BB Rose","2:00 PM","3:00 PM","UK Bass / Club"],["Chatterbox","3:00 PM","3:45 PM","Drum & Bass"],["Clesco","3:45 PM","4:45 PM","UKG / Drum & Bass"],["Borne","4:45 PM","5:45 PM","Deep Dubstep / UKG"],["Champion","5:45 PM","6:45 PM","UK Funky / Bassline"],["Omnom","6:45 PM","7:45 PM","Tech House / Bass House"],["MPH","7:45 PM","8:45 PM","UK Garage / Bass"],["Nia Archives DJ Set","8:45 PM","9:45 PM","Jungle / Drum & Bass"]],"Propagate Stage":[["Stargirl","4:00 PM","4:45 PM","House / Club"],["Buccaltheft","4:45 PM","5:45 PM","Club / Bass"],["Baalti","5:45 PM","6:45 PM","House / UKG"],["Young Franco","6:45 PM","8:00 PM","Nu-Disco / Funky House"],["UNIIQU3","8:00 PM","9:30 PM","Jersey Club / Bass"],["LSDXOXO","9:30 PM","10:30 PM","Techno / Ghetto House"]]},"Day 2":{"Pacific Stage":[["Nai","2:00 PM","3:15 PM","House / Club"],["Raecola","3:15 PM","4:15 PM","Trap / Experimental Bass"],["Linska","4:15 PM","5:15 PM","Tech House / House"],["Oppidan","5:15 PM","6:15 PM","UK Garage / Bassline"],["Tape B","6:15 PM","7:15 PM","Dubstep / Hip-Hop Bass"],["ISOxo","7:20 PM","8:20 PM","Trap / Bass House"],["Knock2","8:25 PM","9:25 PM","Bass House / Trap"],["Dom Dolla","9:30 PM","11:00 PM","House / Tech House"]],"Northwest Tent":[["Kempeh","2:00 PM","2:45 PM","House / Club"],["Jade","2:45 PM","3:45 PM","House / Club"],["Whipped Cream","3:45 PM","4:45 PM","Bass / Trap"],["Roddy Lima","4:45 PM","5:45 PM","House / Tech House"],["Jigitz","5:45 PM","6:45 PM","Future Garage / Breakbeat"],["VTSS","6:45 PM","7:45 PM","Techno / Rave"],["Odd Mob","7:50 PM","8:50 PM","House / Tech House"],["BUNT.","8:55 PM","9:55 PM","Stutter House / Folk House"],["Levity B2B Wooli","10:00 PM","11:00 PM","Dubstep / Melodic Bass"]],"Forest Stage":[["Orchiid","2:00 PM","3:00 PM","Bass / Club"],["Adame Twins","3:00 PM","4:00 PM","Bass House / Techno"],["Shming","4:00 PM","5:00 PM","Bass / Club"],["Effin","5:00 PM","6:00 PM","Dubstep / Bass"],["Dennett","6:00 PM","7:00 PM","Bass / Club"],["Alleycvt","7:00 PM","8:00 PM","Melodic Dubstep / Bass"],["Inzo","8:00 PM","9:00 PM","Melodic Bass / Future Bass"],["Hedex","9:00 PM","10:00 PM","Jump-Up Drum & Bass"]],"Propagate Stage":[["AlyssaJB","4:00 PM","4:45 PM","Club / Pop Dance"],["Fagofcolour","4:45 PM","5:45 PM","House / Pop Club"],["Zorza","5:45 PM","6:45 PM","Hard Techno / Trance"],["MGNA CRRRTA DJ Set","6:45 PM","8:00 PM","Electroclash / EDM Pop"],["MCR-T","8:00 PM","9:30 PM","Ghetto Tech / Techno"],["Bambii","9:30 PM","10:30 PM","Jungle / Dancehall Club"]]}};
 const STAGES = ["Pacific Stage", "Northwest Tent", "Forest Stage", "Propagate Stage"];
 const COLORS = {"Pacific Stage":"#f4c86d", "Northwest Tent":"#2caa9c", "Forest Stage":"#98e83f", "Propagate Stage":"#ef9aa8"};
 const DAY_NAMES = {"Day 1":"Friday, July 3", "Day 2":"Saturday, July 4"};
@@ -1841,7 +1861,7 @@ function render(day){
       stageLabel.textContent = shortStage(stage);
       row.appendChild(stageLabel);
 
-      (DATA[day][stage]||[]).forEach(([artist,start,end])=>{
+      (DATA[day][stage]||[]).forEach(([artist,start,end,genre])=>{
         const startHour = toHour(start);
         const endHour = toHour(end);
         const left = labelWidth + ((startHour-activeStart)/activeDuration)*mobileWidth;
@@ -1861,8 +1881,8 @@ function render(day){
         el.dataset.artist=artist;
         el.dataset.startHour=String(startHour);
         el.dataset.endHour=String(endHour);
-        el.innerHTML=`<div class="artist">${artist}</div><div class="time">${fmtRange(start,end)}</div>`;
-        el.title=`${artist} — ${stage} — ${start} to ${end}`;
+        el.innerHTML=`<div class="artist">${artist}</div><div class="genre">${genre || "EDM"}</div><div class="time">${fmtRange(start,end)}</div>`;
+        el.title=`${artist} — ${genre || "EDM"} — ${stage} — ${start} to ${end}`;
         row.appendChild(el);
       });
 
@@ -1885,7 +1905,7 @@ function render(day){
   STAGES.forEach(stage=>{
     const col=document.createElement("div");
     col.className="col";
-    (DATA[day][stage]||[]).forEach(([artist,start,end])=>{
+    (DATA[day][stage]||[]).forEach(([artist,start,end,genre])=>{
       const top=(toHour(start)-activeStart)/activeDuration*100;
       const height=(toHour(end)-toHour(start))/activeDuration*100;
       const el=document.createElement("div");
@@ -1900,8 +1920,8 @@ function render(day){
       el.dataset.artist=artist;
       el.dataset.startHour=String(toHour(start));
       el.dataset.endHour=String(toHour(end));
-      el.innerHTML=`<div class="artist">${artist}</div><div class="time">${fmtRange(start,end)}</div>`;
-      el.title=`${artist} — ${stage} — ${start} to ${end}`;
+      el.innerHTML=`<div class="artist">${artist}</div><div class="genre">${genre || "EDM"}</div><div class="time">${fmtRange(start,end)}</div>`;
+      el.title=`${artist} — ${genre || "EDM"} — ${stage} — ${start} to ${end}`;
       col.appendChild(el);
     });
     grid.appendChild(col);
@@ -2146,7 +2166,7 @@ let _allSetsCache = null;
 function allSets(){
   if(_allSetsCache) return _allSetsCache;
   const out=[];
-  Object.keys(DATA).forEach(day=>STAGES.forEach(stage=>(DATA[day][stage]||[]).forEach(([artist,start,end])=>out.push({day,stage,artist,start,end,searchText:normalizeSearchText(artist)}))));
+  Object.keys(DATA).forEach(day=>STAGES.forEach(stage=>(DATA[day][stage]||[]).forEach(([artist,start,end,genre])=>out.push({day,stage,artist,start,end,genre,searchText:normalizeSearchText(`${artist} ${genre || ""}`)}))));
   _allSetsCache = out;
   return out;
 }
@@ -2160,7 +2180,7 @@ search.addEventListener("input",()=>{
   matches.forEach(s=>{
     const r=document.createElement("div");
     r.className="result";
-    r.innerHTML=`<b>${s.artist}</b><small>${DAY_NAMES[s.day] || s.day} • ${s.stage} • ${fmtRange(s.start,s.end)}</small>`;
+    r.innerHTML=`<b>${s.artist}</b><small>${s.genre || "EDM"} • ${DAY_NAMES[s.day] || s.day} • ${s.stage} • ${fmtRange(s.start,s.end)}</small>`;
     r.onclick=()=>{
       render(s.day);
       search.value=s.artist;
